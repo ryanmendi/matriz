@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 7</title>
+</head>
+<body>
+    <script>
+              let populacaoEstados = [];
+
+for (let i = 0; i < 20; i++) {
+    let estado = [];
+    document.write(`Estado ${i + 1}: </br>`);
+
+    for (let j = 0; j < 5; j++) {
+        let populacao = parseInt(prompt(`Informe a população da cidade ${j + 1}:`));
+        estado.push(populacao);
+    }
+
+    populacaoEstados.push(estado);
+}
+
+function calcularEstatisticasPopulacao() {
+    for (let i = 0; i < populacaoEstados.length; i++) {
+        let estado = populacaoEstados[i];
+        let maiorPopulacao = Math.max(...estado);
+        let menorPopulacao = Math.min(...estado);
+        let somaPopulacao = estado.reduce((total, pop) => total + pop, 0);
+        let mediaPopulacao = somaPopulacao / estado.length;
+
+        document.write(`Estado ${i + 1}:</br>`);
+        document.write(`Maior população: ${maiorPopulacao}</br>`);
+        document.write(`Menor população: ${menorPopulacao}</br>`);
+        document.write(`Média da população: ${mediaPopulacao.toFixed(2)}</br>`);
+        document.write("------------------------</br>");
+    }
+}
+
+calcularEstatisticasPopulacao();
+
+    </script>
+</body>
+</html>

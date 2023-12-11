@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+<body>
+    <script>
+        const meses = {
+            1:{num: 1,nmpt:'janeiro',nmabrev:'jan',nmeng:'January'},
+            2:{num: 2,nmpt:'fevereiro',nmabrev:'fev',nmeng:'February'},
+            3:{num: 3,nmpt:'março',nmabrev:'mar',nmeng:'March'},
+            4:{num: 4,nmpt:'abril',nmabrev:'abr',nmeng:'April'},
+            5:{num: 5,nmpt:'maio',nmabrev:'mai',nmeng:'May'},
+            6:{num: 6,nmpt:'junho',nmabrev:'jun',nmeng:'June'},
+            7:{num: 7,nmpt:'julho',nmabrev:'jul',nmeng:'July'},
+            8:{num: 8,nmpt:'agosto',nmabrev:'ago',nmeng:'August'},
+            9:{num: 9,nmpt:'setembro',nmabrev:'set',nmeng:'September'},
+            10:{num: 10,nmpt:'outubro',nmabrev:'out',nmeng:'October'},
+            11:{num: 11,nmpt:'novembro',nmabrev:'nov',nmeng:'November'},
+            12:{num: 12,nmpt:'dezembro',nmabrev:'dez',nmeng:'December'},
+        };
+
+        function obterInfoMes(numero_mes) {
+    if (meses[numero_mes]) {
+        const mes = meses[numero_mes];
+        return `${mes.num}, ${mes.nmpt}, ${mes.nmabrev}, ${mes.nmeng}`;
+    } else {
+        return "Número de mês inválido. Por favor, insira um número de 1 a 12.";
+    }
+}
+
+let numeroMes = prompt("Digite um número correspondente a um mês:");
+
+const infoMes = obterInfoMes(numeroMes);
+document.write(infoMes);
+    </script>
+</body>
+</html>

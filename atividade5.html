@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<body>
+    <script>
+        let inversao = [
+            [20, 30, 40, 50, 60, 70],
+            [21, 31, 41, 51, 61, 71],
+            [22, 32, 42, 52, 62, 72],
+            [23, 33, 43, 53, 63, 73],
+            [24, 34, 44, 54, 64, 74],
+        ];
+
+
+
+        for (let linhas = 0; linhas < 5; linhas++) {
+            for (let colunas = 0; colunas < 6; colunas++) {
+                document.write(inversao[linhas][colunas] + " ");
+            }
+
+            document.write("</br>");
+        }
+        document.write('</br></br>')
+
+        for (let colunas = 0; colunas < 6; colunas++) {
+                for (let linhas = 0; linhas < 5; linhas++) {
+                document.write(inversao[linhas][colunas] + " ");
+            }
+            document.write("</br>");
+        }
+
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 6</title>
+</head>
+<body>
+    <script>
+            let matriz = [
+                      [20,30,40,50,60], 
+                      [21,31,41,51,61],
+                      [22,32,42,52,62],
+                      [23,33,43,53,63]
+                      
+                    ];
+ 
+                    let somaLinha = 0;
+                    let somaColuna = 0;
+ 
+        for (let linhas = 0; linhas < 4; linhas++) {
+            for (let colunas = 0; colunas < 5; colunas++) {
+               somaLinha += matriz[linhas][colunas];
+             // document.write(matriz[linhas][colunas]+ "  ");
+              somaColuna += matriz[colunas-1][linhas];
+            }
+            
+            document.write("Soma das linhas" + somaLinha + "<br/>");
+            somaLinha = 0;
+            document.write("Soma das colunas" + somaColuna + "<br/>");
+            somaColuna = 0;
+ 
+        }
+ 
+          
+    </script>
+</body>
+</html>

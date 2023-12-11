@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 9</title>
+</head>
+<body>
+    <script>
+         let batalhaNaval = [
+            [1, 2, 3, 4, 5],
+            [6, 7, 8, 9, 10],
+            [11, 12, 13, 14, 15],
+            [16, 17, 18, 19, 20],
+            [21, 22, 23, 24, 25],
+            [26, 27, 28, 29, 30],
+            [31, 32, 33, 34, 35],
+            [36, 37, 38, 39, 40],
+            [41, 42, 43, 44, 45],
+            [46, 47, 48, 49, 50]
+        ];
+
+        let pontuacaoJ1 = 0;
+        let pontuacaoJ2 = 0;
+        Num1 = 70
+        Num2 = 100
+        // Jogador 1 posiciona os navios
+        alert("Jogador 1, escolha as posições onde os 10 navios serão colocados");
+        let posicoesJ1Navios = [];
+        for (let i = 0; i < 10; i++) {
+            let v = parseInt(prompt("Escolha a posição vertical do navio " + (i + 1)));
+            let h = parseInt(prompt("Escolha a posição horizontal do navio " + (i + 1)));
+            posicoesJ1Navios.push([h, v]);
+        }
+
+        // Jogador 2 lança as bombas
+        alert("Agora o jogador 2 vai escolher onde serão colocadas as 10 bombas para pontuar");
+        let posicoesJ2Bombas = [];
+        for (let i = 0; i < 10; i++) {
+            let v = parseInt(prompt("Escolha a posição vertical para a bomba " + (i + 1)));
+            let h = parseInt(prompt("Escolha a posição horizontal para a bomba " + (i + 1)));
+            posicoesJ2Bombas.push([h, v]);
+        }
+
+        // Verifica os acertos
+        for (let i = 0; i < posicoesJ2Bombas.length; i++) {
+            let bombaX = posicoesJ2Bombas[i][0];
+            let bombaY = posicoesJ2Bombas[i][1];
+
+            for (let j = 0; j < posicoesJ1Navios.length; j++) {
+                let navioX = posicoesJ1Navios[j][0];
+                let navioY = posicoesJ1Navios[j][1];
+
+                if (bombaX === navioX && bombaY === navioY) {
+                    pontuacaoJ2 = pontuacaoJ2 + Num2;
+                    // Você pode querer marcar este acerto ou fazer algo para representar visualmente o acerto
+                } else {
+                    pontuacaoJ1 = pontuacaoJ1 + Num1
+                }
+            }
+        }
+
+        // Exibe os pontos e a grade de batalha
+        document.write("<p>O jogador 1 fez " + pontuacaoJ1 + " pontos</p>");
+        document.write("<p>O jogador 2 fez " + pontuacaoJ2 + " pontos </p>");
+
+        for (let linhas = 0; linhas < 10; linhas++) {
+            for (let colunas = 0; colunas < 5; colunas++) {
+                document.write(batalhaNaval[linhas][colunas] + " ");
+            }
+            document.write("<br>");
+        }
+    </script>
+</body>
+</html>

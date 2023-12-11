@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 8</title>
+</head>
+<body>
+    <script>
+        let professores = [
+    ["professor 1", "matutino", "vespertino", ["matemática", "português", "ciências", "história", "geografia", "Inglês", "Educação física"]],
+    ["professor 2", "vespertino", "noturno", ["português", "matemática", "história", "geografia", "física", "química", "biologia"]],
+    ["professor 3", "matutino", "noturno", ["português", "matemática", "história", "geografia", "física", "química", "biologia"]],
+    ["professor 4", "vespertino", "noturno", ["português", "matemática", "história", "geografia", "física", "química", "biologia"]],
+    ["professor 5", "vespertino", "matutino", ["português", "matemática", "história", "geografia", "física", "química", "biologia"]],
+    ["professor 6", "matutino", "noturno", ["português", "matemática", "história", "geografia", "física", "química", "biologia"]],
+    
+];
+
+function consultarprofessor(disciplina, turno) {
+    let professoresDisponiveis = [];
+
+    for (let i = 0; i < professores.length; i++) {
+        let professor = professores[i];
+        let turnos = [professor[1], professor[2]];
+        let disciplinas = professor[3];
+
+        // verificar se o professor pode ministrar a disciplina no turno solicitado
+        if ((turnos.includes(turno)) && (disciplinas.includes(disciplina))) {
+            professoresDisponiveis.push(professor[0]); // Adicionar o nome do professor disponível
+        }
+    }
+
+    return professoresDisponiveis;
+}
+
+// Exemplo de consulta: qual professor pode ministrar "matemática" no turno "matutino"?
+let disciplinaconsulta = prompt("Digite uma matéria para consultar qual professor pode lecionar ela");
+let turnoconsulta = prompt("Digite um turno com a qual você deseja consultar qual professor pode trabalhar");
+let professoresDisponiveis = consultarprofessor(disciplinaconsulta, turnoconsulta);
+
+if (professoresDisponiveis.length > 0) {
+    document.write(`Os seguintes professores podem ministrar ${disciplinaconsulta} no turno ${turnoconsulta}: </br>`);
+    document.write(professoresDisponiveis.join(", "));
+} else {
+    document.write(`nenhum professor encontrado para ministrar ${disciplinaconsulta} no turno ${turnoconsulta}.`);
+}
+
+        
+ 
+    </script>
+</body>
+</html>
